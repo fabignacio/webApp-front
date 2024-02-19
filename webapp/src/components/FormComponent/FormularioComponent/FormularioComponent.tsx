@@ -2,11 +2,21 @@ import { Dispatch, SetStateAction } from "react";
 import { ImgComponent } from "../ImgComponent/ImgComponent";
 
 interface Props {
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
   setFoto: Dispatch<SetStateAction<File | null>>;
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  onChangeRegistro: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => void;
 }
 
-export const FormularioComponent = ({ handleSubmit, setFoto }: Props) => {
+export const FormularioComponent = ({
+  setFoto,
+  handleSubmit,
+  onChangeRegistro,
+}: Props) => {
   return (
     <>
       <form
@@ -23,7 +33,14 @@ export const FormularioComponent = ({ handleSubmit, setFoto }: Props) => {
             >
               Fecha *
             </label>
-            <input type="date" className="form-control" id="fecha" required />
+            <input
+              type="date"
+              className="form-control"
+              id="fecha"
+              name="fechaRegistro"
+              onChange={onChangeRegistro}
+              required
+            />
           </div>
           <div className="mb-3">
             <label
@@ -34,6 +51,8 @@ export const FormularioComponent = ({ handleSubmit, setFoto }: Props) => {
               Descripción *
             </label>
             <textarea
+              name="descripcion"
+              onChange={onChangeRegistro}
               className="form-control"
               id="descripcion"
               required
@@ -47,7 +66,13 @@ export const FormularioComponent = ({ handleSubmit, setFoto }: Props) => {
             >
               Impacto *
             </label>
-            <select className="form-select" id="impacto" required>
+            <select
+              className="form-select"
+              name="impacto"
+              id="impacto"
+              onChange={onChangeRegistro}
+              required
+            >
               <option value="" disabled>
                 Selecciona el impacto
               </option>
@@ -65,8 +90,10 @@ export const FormularioComponent = ({ handleSubmit, setFoto }: Props) => {
               Personal Involucrado *
             </label>
             <textarea
+              name="personalInvolucrado"
               className="form-control"
               id="personal"
+              onChange={onChangeRegistro}
               required
             ></textarea>
           </div>
@@ -81,8 +108,10 @@ export const FormularioComponent = ({ handleSubmit, setFoto }: Props) => {
               Antecedentes *
             </label>
             <textarea
+              name="antecedentes"
               className="form-control"
               id="antecedentes"
+              onChange={onChangeRegistro}
               required
             ></textarea>
           </div>
@@ -95,6 +124,8 @@ export const FormularioComponent = ({ handleSubmit, setFoto }: Props) => {
               Acciones Inmediatas *
             </label>
             <textarea
+              name="accionesInmediatas"
+              onChange={onChangeRegistro}
               className="form-control"
               id="acciones"
               required
@@ -109,6 +140,8 @@ export const FormularioComponent = ({ handleSubmit, setFoto }: Props) => {
               Atención al Evento *
             </label>
             <textarea
+              name="atencionEvento"
+              onChange={onChangeRegistro}
               className="form-control"
               id="atencion"
               required
