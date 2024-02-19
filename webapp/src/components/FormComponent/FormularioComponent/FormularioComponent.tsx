@@ -37,7 +37,7 @@ export const FormularioComponent = ({
               type="date"
               className="form-control"
               id="fecha"
-              name="fechaRegistro"
+              name="fecha"
               onChange={onChangeRegistro}
               required
             />

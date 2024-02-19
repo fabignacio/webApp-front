@@ -23,33 +23,7 @@ export const RegistroComponent = () => {
   ) => {
     const { name, value } = event.target;
 
-    if (name === "fechaRegistro") {
-      setIncidente({ ...incidente, fecha: value });
-    }
-
-    if (name === "descripcion") {
-      setIncidente({ ...incidente, descripcion: value });
-    }
-
-    if (name === "impacto") {
-      setIncidente({ ...incidente, impacto: value });
-    }
-
-    if (name === "personalInvolucrado") {
-      setIncidente({ ...incidente, personalInvolucrado: value });
-    }
-
-    if (name === "antecedentes") {
-      setIncidente({ ...incidente, antecedentes: value });
-    }
-
-    if (name === "accionesInmediatas") {
-      setIncidente({ ...incidente, accionesInmediatas: value });
-    }
-
-    if (name === "atencionEvento") {
-      setIncidente({ ...incidente, atencionEvento: value });
-    }
+    setIncidente({ ...incidente, [name]: value });
   };
 
   return (
