@@ -1,5 +1,4 @@
-import { FormComponent } from "../FormComponent/FormComponent";
-import { HeaderComponent } from "../HeaderComponent/HeaderComponent";
+import { HeaderComponent, RegistroComponent } from "../FormComponent";
 
 export const ContenedorComponent = () => {
   return (
@@ -9,7 +8,7 @@ export const ContenedorComponent = () => {
           <HeaderComponent />
         </div>
         <div className="mt-5">
-          <FormComponent />
+          <RegistroComponent />
         </div>
       </div>
     </>
