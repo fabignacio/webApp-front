@@ -1,10 +1,20 @@
 export interface IIncidente {
-    fecha: Date | string,
-    descripcion: string,
-    impacto: string,
-    personalInvolucrado: string,
-    antecedentes: string,
-    accionesInmediatas: string,
-    atencionEvento: string,
-    registoFotografico?: string
+    Fecha: Date | string,
+    Descripcion: string,
+    Impacto: string,
+    AccionesInmediatas: string,
+    AtencionEvento: string,
+    RegistroFotografico?: string
+
+    /* Datos Antecedentes */
+    Operacion: string,
+    FechaAntecedente: Date | string,
+    Ubicacion: string,
+    HoraInformada?: string,
+
+    /* Datos PersonalInvolucrado */
+    Nombre: string,
+    Cargo: string,
+    DanioGenerado: string,
+    Equipos: string,
 }

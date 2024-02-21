@@ -3,18 +3,18 @@ import { useState } from "react";
 import { INITIAL_VALUES_INCIDENTE } from "../../utils/initialValues";
 import { FormularioComponent } from "./FormularioComponent/FormularioComponent";
 import { IIncidente } from "../../interfaces/Incidente";
-import useStoreEvent from "../../zustand/eventStore";
+import useStoreDocumento from "../../zustand/eventStore";
 
 export const RegistroComponent = () => {
-  const useControlEvent = useStoreEvent((store) => store);
+  const useControlEvent = useStoreDocumento((store) => store);
   const [incidente, setIncidente] = useState<IIncidente>(
     INITIAL_VALUES_INCIDENTE
   );
   const [foto, setFoto] = useState<string>("");
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    useControlEvent.insertarEvento(incidente);
+    useControlEvent.insertarDocumento(incidente);
   };
 
   const onChangeRegistro = (
@@ -24,7 +24,6 @@ export const RegistroComponent = () => {
       | React.ChangeEvent<HTMLSelectElement>
   ) => {
     const { name, value } = event.target;
-
     setIncidente({ ...incidente, [name]: value });
   };
 

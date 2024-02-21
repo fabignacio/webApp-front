@@ -10,17 +10,16 @@ interface Props {
 export const ImgComponent = ({ incidente, setIncidente, setFoto }: Props) => {
   const handleFotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
-      const selectedFoto = event.target.files[0];
+      const selectedFoto: File = event.target.files[0];
       const reader: FileReader = new FileReader();
-
       reader.onload = () => {
         const base64String: string | undefined = reader.result?.toString();
         if (base64String) {
           setFoto(base64String);
-          setIncidente({ ...incidente, registoFotografico: base64String });
+          setIncidente({ ...incidente, RegistroFotografico: base64String });
         }
-        reader.readAsDataURL(selectedFoto);
       };
+      reader.readAsDataURL(selectedFoto); // Movido aquí
     }
   };
 
