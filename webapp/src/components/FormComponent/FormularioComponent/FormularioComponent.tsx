@@ -1,8 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
 import { ImgComponent } from "../ImgComponent/ImgComponent";
+import { IIncidente } from "../../../interfaces/Incidente";
 
 interface Props {
-  setFoto: Dispatch<SetStateAction<File | null>>;
+  incidente: IIncidente;
+  setIncidente: Dispatch<SetStateAction<IIncidente>>;
+  setFoto: Dispatch<SetStateAction<string>>;
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
   onChangeRegistro: (
     event:
@@ -13,6 +16,8 @@ interface Props {
 }
 
 export const FormularioComponent = ({
+  incidente,
+  setIncidente,
   setFoto,
   handleSubmit,
   onChangeRegistro,
@@ -148,7 +153,11 @@ export const FormularioComponent = ({
             ></textarea>
           </div>
           <div className="mb-3">
-            <ImgComponent setFoto={setFoto} />
+            <ImgComponent
+              setFoto={setFoto}
+              setIncidente={setIncidente}
+              incidente={incidente}
+            />
           </div>
         </div>
         <div className="col-md-12 d-flex justify-content-center">

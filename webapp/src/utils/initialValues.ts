@@ -1,6 +1,4 @@
-import { Incidente } from "../interfaces/incidente";
-
-export const INITIAL_VALUES_INCIDENTE: Incidente = {
+export const INITIAL_VALUES_INCIDENTE = {
     fecha: '',
     descripcion: '',
     impacto: 'ALTO',
