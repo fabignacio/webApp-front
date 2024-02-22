@@ -28,8 +28,6 @@ export const FormularioComponent = ({
   handleSubmit,
   onChangeRegistro,
 }: Props) => {
-  const pdfUrl = useStoreDocumento((store) => store);
-
   return (
     <>
       <form

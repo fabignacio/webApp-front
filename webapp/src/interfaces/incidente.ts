@@ -4,7 +4,7 @@ export interface IIncidente {
     Impacto: string,
     AccionesInmediatas: string,
     AtencionEvento: string,
-    RegistroFotografico?: string
+    ImagenBase64?: string
 
     /* Datos Antecedentes */
     Operacion: string,

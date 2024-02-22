@@ -10,8 +10,8 @@ export const insertarDocumento = async (data: IIncidente) => {
         return response;
     } catch (error) {
         if (isAxiosError(error)) {
-            return error
+            return error;
         }
-        return error
+        return error;
     }
 }

@@ -8,18 +8,26 @@ interface Props {
 }
 
 export const ImgComponent = ({ incidente, setIncidente, setFoto }: Props) => {
-  const handleFotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFotoChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     if (event.target.files && event.target.files.length > 0) {
       const selectedFoto: File = event.target.files[0];
-      const reader: FileReader = new FileReader();
+
+      // Convertir el archivo a una cadena base64
+      const reader = new FileReader();
+      reader.readAsDataURL(selectedFoto);
       reader.onload = () => {
-        const base64String: string | undefined = reader.result?.toString();
-        if (base64String) {
-          setFoto(base64String);
-          setIncidente({ ...incidente, RegistroFotografico: base64String });
+        const base64Data = reader.result?.toString();
+        if (base64Data) {
+          // Extraer solo los datos base64 eliminando el prefijo
+          const base64Only = base64Data.split(",")[1];
+          setIncidente({ ...incidente, ImagenBase64: base64Only });
         }
       };
-      reader.readAsDataURL(selectedFoto); // Movido aquí
+      reader.onerror = (error) => {
+        console.error("Error al leer el archivo:", error);
+      };
     }
   };
 
