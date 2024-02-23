@@ -10,6 +10,18 @@ La funcionalidad principal es para que el usuario pueda subir un incidente con l
 
 # Antes de utilizar
 
-Antes de iniciar la aplicación, debe clonar el repositorio utilizando el siguiente código
+El primer paso, es clonar el repositorio utilizando el siguiente código
 
     git clone https://github.com/fabignacio/webApp-front.git
+
+Una vez clonado el repositorio, abriendo la terminal (ya sea de Visual Studio Code, PowerShell(Windows) o Terminal (MAC)), deberá de ejecutar el siguiente comando para hacer las instalaciones de las dependencias del proyecto:
+
+    npm install
+
+# Ejecutar proyecto
+
+Una vez terminado el paso anterior, solamente deberá ejecutar el siguiente comando:
+
+    npm run start
+
+Con ese comando se deberá levantar la página en una dirección localhost.
