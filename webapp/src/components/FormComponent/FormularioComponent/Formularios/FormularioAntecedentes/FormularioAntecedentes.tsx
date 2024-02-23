@@ -30,7 +30,7 @@ export const FormularioAntecedentes = ({ onChangeRegistro }) => {
             htmlFor="FechaAntecedente"
             style={{ color: "#66667F", fontFamily: "Bebas Neue" }}
           >
-            Fecha *
+            Fecha Antecedente*
           </label>
           <input
             type="date"

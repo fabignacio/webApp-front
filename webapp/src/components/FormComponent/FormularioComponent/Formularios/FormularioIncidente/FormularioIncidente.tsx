@@ -21,7 +21,7 @@ export const FormularioIncidente = ({
             className="form-label"
             style={{ color: "#66667F", fontFamily: "Bebas Neue" }}
           >
-            Fecha *
+            Fecha Incidente*
           </label>
           <input
             type="date"
