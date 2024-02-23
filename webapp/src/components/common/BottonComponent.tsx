@@ -1,7 +1,4 @@
-interface Props {
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-}
-export const BottonComponent = ({ handleSubmit }: Props) => {
+export const BottonComponent = () => {
   return (
     <>
       <button

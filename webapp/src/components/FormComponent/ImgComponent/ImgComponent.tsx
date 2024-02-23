@@ -1,16 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
-import { IIncidente } from "../../../interfaces/Incidente";
-
-interface Props {
-  incidente: IIncidente;
-  setIncidente: Dispatch<SetStateAction<IIncidente>>;
-  setFoto: Dispatch<SetStateAction<string>>;
-}
-
-export const ImgComponent = ({ incidente, setIncidente, setFoto }: Props) => {
-  const handleFotoChange = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+export const ImgComponent = ({ incidente, setIncidente, setFoto }) => {
+  const handleFotoChange = async (event) => {
     if (event.target.files && event.target.files.length > 0) {
       const selectedFoto: File = event.target.files[0];
 

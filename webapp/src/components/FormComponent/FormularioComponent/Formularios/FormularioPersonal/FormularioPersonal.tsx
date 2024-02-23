@@ -1,13 +1,4 @@
-interface Props {
-  onChangeRegistro: (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-      | React.ChangeEvent<HTMLSelectElement>
-  ) => void;
-}
-
-export const FormularioPersonal = ({ onChangeRegistro }: Props) => {
+export const FormularioPersonal = ({ onChangeRegistro }) => {
   return (
     <>
       <h1

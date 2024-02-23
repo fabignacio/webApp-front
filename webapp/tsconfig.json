@@ -6,11 +6,11 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "allowJs": true, // Permite la inclusión de archivos JavaScript
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "commonjs", 
@@ -22,6 +22,8 @@
   },
   "include": [
     "src/**/*.ts", 
-    "src/**/*.tsx" 
+    "src/**/*.tsx",
+    "src/**/*.js", // Incluye archivos JavaScript
+    "src/**/*.jsx" // Incluye archivos JavaScript
  ]
 }

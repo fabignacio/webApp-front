@@ -1,27 +1,21 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 import { insertarDocumento } from '../api';
-import { IIncidente } from '../interfaces/Incidente';
 
-interface State {
-    pdfData: ArrayBuffer | null;
-    insertarDocumento: (data: IIncidente) => void;
-}
-
-const useStoreDocumento = create<State>((set) => ({
+const useStoreDocumento = create((set) => ({
     pdfData: null,
-    insertarDocumento: async (data: IIncidente) => {
+    insertarDocumento: async (data) => {
         try {
-            const response: any = await insertarDocumento(data);
+            const response = await insertarDocumento(data);
             if (response.status === 200) {
-                const blob: Blob = new Blob([response.data], { type: "application/pdf" })
+                const blob = new Blob([response.data], { type: "application/pdf" });
 
                 //Creamos una URL para el Blob
-                const blobUrl: string = URL.createObjectURL(blob);
+                const blobUrl = URL.createObjectURL(blob);
 
                 //Creamos un link oculto para descargar el PDF
-                const link: HTMLAnchorElement = document.createElement('a');
+                const link = document.createElement('a');
                 link.href = blobUrl;
-                link.download = 'Evento.pdf' //Nombre del archivo que se descargará
+                link.download = 'Evento.pdf'; //Nombre del archivo que se descargará
 
                 //Simulamos un click en el enlace para iniciar la descarga
                 link.click();

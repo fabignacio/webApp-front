@@ -1,25 +1,9 @@
-import { Dispatch, SetStateAction } from "react";
-import { IIncidente } from "../../../interfaces/Incidente";
 import {
   FormularioAntecedentes,
   FormularioIncidente,
   FormularioPersonal,
 } from "./Formularios";
 import { BottonComponent } from "../../common";
-import useStoreDocumento from "../../../zustand/eventStore";
-
-interface Props {
-  incidente: IIncidente;
-  setIncidente: Dispatch<SetStateAction<IIncidente>>;
-  setFoto: Dispatch<SetStateAction<string>>;
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-  onChangeRegistro: (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-      | React.ChangeEvent<HTMLSelectElement>
-  ) => void;
-}
 
 export const FormularioComponent = ({
   incidente,
@@ -27,7 +11,7 @@ export const FormularioComponent = ({
   setFoto,
   handleSubmit,
   onChangeRegistro,
-}: Props) => {
+}) => {
   return (
     <>
       <form
@@ -49,7 +33,7 @@ export const FormularioComponent = ({
         </div>
         <div className="row justify-content-center">
           <div className="col-md-6 text-center">
-            <BottonComponent handleSubmit={handleSubmit} />
+            <BottonComponent />
           </div>
         </div>
       </form>

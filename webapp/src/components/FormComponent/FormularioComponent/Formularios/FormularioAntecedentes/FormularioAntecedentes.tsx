@@ -1,16 +1,10 @@
-interface Props {
-  onChangeRegistro: (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-      | React.ChangeEvent<HTMLSelectElement>
-  ) => void;
-}
-
-export const FormularioAntecedentes = ({ onChangeRegistro }: Props) => {
+export const FormularioAntecedentes = ({ onChangeRegistro }) => {
   return (
     <>
-      <h1 style={{ fontFamily: "Bebas Neue", color: "#5B75A6" }}>
+      <h1
+        className="text-center"
+        style={{ fontFamily: "Bebas Neue", color: "#5B75A6" }}
+      >
         Antecedentes
       </h1>
 
